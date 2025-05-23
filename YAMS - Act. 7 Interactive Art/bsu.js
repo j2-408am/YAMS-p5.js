@@ -5,7 +5,7 @@ let x = 0; // For animation of the reveal effect
 let easing = 0.07;
 
 let fonts = [];
-let currentFontIndex = 0; // Font changes every 2 seconds
+let currentFontIndex = 0; // Font changes every 1 seconds
 let lastChangeTime = 0;
 
 // Offscreen graphics layers
@@ -38,19 +38,21 @@ function setup() {
 }
 
 function draw() {
-  // Add new shapes every 50 frames
-  if (frameCount % 50 === 0) {
-    bgLayer.stroke(random(421), random(532), random(133));
-    bgLayer.fill(random(421), random(300), random(133));
-    bgLayer.rect(random(width), random(height), random(20), random(10));
-    bgLayer.ellipse(random(width), random(height), random(10), random(10));
+  // Add new shapes every 30 frames
+  if (frameCount % 70 === 0) {
+    let alphaVal = 75; // Adjust for opacity
+    bgLayer.stroke(random(200), random(200), random(200), alphaVal);
+    bgLayer.fill(random(200), random(200), random(200), alphaVal);
+    bgLayer.rect(random(width), random(height), random(35), random(35));
+    bgLayer.ellipse(random(width), random(height), random(100), random(100));
+    bgLayer.triangle(random(width), random(height), random(50), random(50), random(13), random(50)); // Ray effect
   }
 
   // Display the background layer
   image(bgLayer, 0, 0);
 
-  // Different fonts every 2 seconds
-  if (millis() - lastChangeTime > 2000) {
+  // Different fonts every 1 second
+  if (millis() - lastChangeTime > 1000) {
     currentFontIndex = (currentFontIndex + 1) % fonts.length;
     lastChangeTime = millis();
   }
