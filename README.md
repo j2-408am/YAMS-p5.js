@@ -1,2 +1,1 @@
-# YAMS-p5.js
-A compilation of p5.js activities for Creative Coding
+This repository contains a series of activities demonstrating my creative capabilities while exploring p5.js. This includes techniques such as generative art, animation, user interaction, sound, data visualization, and games. Each sketch demonstrates a unique concept or effect, often inspired by personal photos, sounds, or custom graphics.
